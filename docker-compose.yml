@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=rstore
+      - POSTGRES_USER=rstore
+    ports:
+      - "5432:5432"
