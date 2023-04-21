@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests3 {
-    use crate::crud::s3::InsertS3Storage;
+    use crate::crud::s3::insert_s3_storage;
 
     #[test]
     fn demo() {
@@ -12,6 +12,10 @@ mod tests3 {
     fn insert() {
         let bucket = String::from("test");
         let key = String::from("key");
-        InsertS3Storage(&bucket, &key)
+        let res =  insert_s3_storage(&bucket, &key);
+        match res {
+            Ok(_) => println!("success"),
+            Err(_) => panic!("failed"),
+        }
     }
 }
