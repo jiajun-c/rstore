@@ -8,9 +8,10 @@ appenders:
     encoder:
       pattern: "{d} - {m}{n}"
 root:
-  level: warn
+  level: info
   appenders:
     - stdout
+    - requests
 loggers:
   app::backend::db:
     level: info
