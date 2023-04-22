@@ -8,5 +8,5 @@ edition = "2021"
 [dependencies]
 tokio = {version = "1.26.0", features = ["full"]}
 axum = {version = "0.6.16"}
-diesel = {version = "2.0.4", features = ["postgres"]}
+diesel = {version = "2.0.4", features = ["postgres", "r2d2"]}
 dotenvy ={ version = "0.15.7"}
