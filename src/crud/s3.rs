@@ -13,6 +13,6 @@ pub fn insert_s3_storage(bucket_name: &str, s3_key: &str) -> Result<usize, diese
 }
 
 
-pub fn delete_s3_storage(bucket_name: &str, s3_key: &str) {
+// pub fn delete_s3_storage(bucket_name: &str, s3_key: &str) {
     
-}
+// }
