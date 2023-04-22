@@ -1,4 +1,4 @@
-use diesel::{RunQueryDsl, PgConnection};
+use diesel::{RunQueryDsl, PgConnection, QueryDsl, ExpressionMethods, BoolExpressionMethods};
 
 use crate::models::storage::NewS3Storage;
 use crate::schema::s3storage;
@@ -10,6 +10,9 @@ pub fn insert_s3_storage(conn: &mut PgConnection, bucket_name: &str, s3_key: &st
             .execute(conn)
 }
 
-// pub fn delete_s3_storage(bucket_name: &str, s3_key: &str) {
-    
-// }
+pub fn delete_s3_storage(conn:&mut PgConnection, bucket_name: &str, s3_key: &str) -> Result<usize, diesel::result::Error>{
+    diesel::delete(s3storage::table.filter(s3storage::s3_key.eq(s3_key).and(s3storage::bucket_name.eq(bucket_name)))).execute(conn)
+}
+
+// TODO update and check
+// Not sure to provide what ?

@@ -3,6 +3,7 @@ use diesel::r2d2::ConnectionManager;
 use diesel::r2d2::Pool;
 use diesel::r2d2::PooledConnection;
 
+// TODO Add the pool size, from the new function param or the config 
 pub struct DbPool {
     pub pool: Pool<ConnectionManager<PgConnection>>
 }   

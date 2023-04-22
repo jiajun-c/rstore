@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests3 {
-    use crate::crud::s3::insert_s3_storage;
+    use crate::crud::s3::{insert_s3_storage, delete_s3_storage};
     use crate::crud::pool::DbPool;
     #[test]
     fn demo() {
@@ -20,5 +20,24 @@ mod tests3 {
             Ok(_) => println!("success"),
             Err(_) => panic!("failed"),
         }
+    }
+
+    #[test]
+    fn delete() {
+        let bucket = String::from("test");
+        let key = String::from("key");
+        let url = "postgres://rstore:rstore@localhost:5432/rstore";
+        let pool = DbPool::new(url);
+        let mut conn = pool.get_one_connection();
+        let res = delete_s3_storage(&mut conn, &bucket, &key);
+        match res {
+            Ok(_) => println!("sucess"),
+            Err(_) => panic!("failed")
+        }
+    }
+
+    #[test]
+    fn update() {
+
     }
 }
