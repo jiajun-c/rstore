@@ -3,6 +3,7 @@ pub mod models;
 pub mod crud;
 pub mod config;
 pub mod schema;
+pub mod storage;
 use axum::{
     routing::get,
     Router,
