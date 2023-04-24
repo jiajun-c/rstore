@@ -1,14 +1,17 @@
 #[cfg(test)]
 mod tests3 {
-
-    use crate::{storage::s3::make_bucket};
+    use crate::{storage::s3::{create_bucket, S3authorization}};
     #[tokio::test]
     async fn test_make_bucket() {
-        let id = "Qpp4IdRalkdoMuC2";
-        let secret_key = "cOeTN9UjuP4bTut5U9VHi2vC7fKcVhbK";
-        let endpoint = "http://211.67.25.90:9010/";
-        
-        let res = make_bucket(&client, "bucket", "cn-north-1").await;
-        assert!(res.is_ok(), "{res:?}");
+        let access_key = String::from("uX1tWH3BI4y3hGjN");
+        let sercet_key = String::from("46RKz12R0rBHam8yEinBKNtpXn1j94eB");
+        let author = S3authorization::new(access_key, sercet_key);
+        let end_point = "http://localhost:9000";
+        let bucket_name = "demo";
+        let ans = create_bucket(bucket_name, end_point, &author).await;
+        match ans {
+            Err(err) => {println!("{:?}", err); panic!("err");},
+            Ok(_) => println!("ok"),
+        }
     }
 }
