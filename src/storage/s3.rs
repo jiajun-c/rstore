@@ -1,39 +1,35 @@
-use s3::bucket_ops::CreateBucketResponse;
 use s3::creds::Credentials;
 use s3::error::S3Error;
-use s3::{BucketConfiguration, Bucket};
+use s3::request::ResponseData;
+use s3::Bucket;
 use awsregion::Region;
 
-// pub async ate_bucket(bucket_name: &str) -> Result<CreateBucketResponse, S3Error> {
-//     let region =  Region::Custom {
-//         region: "eu-central-1".to_owned(),
-//         endpoint: "127.0.0.1:9000".to_owned(),
-//     };
-//     let assess_key = "admin";
-//     let secret_key = "admin123";
-//     let config = BucketConfiguration::default();
-//     let cred = Credentials::new(Some(assess_key), Some(secret_key), None, None, None)?;
-//     let create_bucket_respone = Bucket::create(bucket_name, region, cred, config);
-//     create_bucket_respone.await
-// }
-
-pub struct S3authorization {
-    access_key : String,
-    secret_key : String,
+pub struct S3Bucket {
+    bucket: Bucket,
 }
 
-impl S3authorization {
-    pub fn new(access_key: String, secret_key: String) -> Self {
-        S3authorization{access_key, secret_key}
+impl S3Bucket  {
+    pub fn new(bucket_name:String, access_key: String, secret_key: String, endpoint: String) -> Self {
+        let region_name = "us-east-1".to_string();
+        let region = Region::Custom {region: region_name,endpoint};   
+        let cred = Credentials::new(Some(&access_key), Some(&secret_key), None, None, None).unwrap();
+        // let resp = Bucket::create_with_path_style(&bucket_name, region, cred, config).await;
+        let resp = Bucket::new(&bucket_name, region, cred);
+        // let resp: Result<CreateBucketResponse, S3Error> = create_bucket(bucket_name, endpoint, access_key, secret_key).await;
+        match resp {
+            Ok(resp) => {
+                return Self{bucket:resp.with_path_style()};
+            },
+            Err(_) => {panic!("failed to create the bucket")}
+        }
     }
-}
 
-pub async fn create_bucket(bucket_name: &str, endpoint: &str, key: &S3authorization) -> Result<CreateBucketResponse, S3Error> {
-    let region_name = "us-east-1".to_string();
-    let region = Region::Custom {region: region_name,endpoint:endpoint.to_string()};
-    let config = BucketConfiguration::default();
-    let cred = Credentials::new(Some(&key.access_key), Some(&key.secret_key), None, None, None).unwrap();
-    
-    let creat_bucket_response = Bucket::create_with_path_style(bucket_name, region, cred, config).await;
-    creat_bucket_response
+    pub async fn delete(&self) -> Result<u16, S3Error>{
+        self.bucket.delete().await
+    }
+
+    pub async fn put_object(&self, path: &str, content:&[u8]) -> Result<ResponseData, S3Error>{
+        let resp = self.bucket.put_object(path, content).await;
+        resp
+    }
 }

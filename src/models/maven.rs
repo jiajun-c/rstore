@@ -4,5 +4,6 @@ pub struct Maven {
     pub group_id: String,
     pub artifact_id: String,
     pub packaging: String,
-    pub version: String
+    pub version: String,
+    pub path: String,
 }
