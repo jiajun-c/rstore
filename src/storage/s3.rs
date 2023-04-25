@@ -32,4 +32,9 @@ impl S3Bucket  {
         let resp = self.bucket.put_object(path, content).await;
         resp
     }
+
+    pub async fn delete_object(&self, path: &str) -> Result<ResponseData, S3Error> {
+        let resp = self.bucket.delete_object(path).await;
+        resp
+    }
 }

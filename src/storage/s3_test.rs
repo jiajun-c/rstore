@@ -55,4 +55,15 @@ mod tests3 {
             Err(e) => {println!("{:?}", e);panic!("error in delete")}
         }
     }
+
+    #[tokio::test] 
+    async fn test_delete_object() {
+        let access_key = String::from("9wn2DETG5kY3qybY");
+        let sercet_key = String::from("8GF5bSzSMNL6jDiKxqIcFWpnaLlZ2Gxk");
+        let end_point = String::from("http://localhost:9000");
+        let bucket_name = String::from("demo5");
+        let buck = S3Bucket::new(bucket_name, access_key, sercet_key, end_point);
+        // let _ = buck.put_object("/test1", "test".as_bytes()).await;
+        let _ = buck.delete_object("/test1").await;
+    }
 }
