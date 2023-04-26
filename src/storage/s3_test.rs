@@ -1,10 +1,9 @@
 #[cfg(test)]
 mod tests3 {
-    use crate::{storage::s3::{S3Bucket}};
+    use crate::storage::s3::S3Bucket;
     use awsregion::Region;
-    use futures::Future;
     use s3::creds::Credentials;
-    use s3::{BucketConfiguration, Bucket};
+    use s3::Bucket;
 
     #[tokio::test]
     async fn test_make_bucket() {
@@ -12,9 +11,8 @@ mod tests3 {
         let sercet_key = String::from("8GF5bSzSMNL6jDiKxqIcFWpnaLlZ2Gxk");
         let end_point = String::from("http://localhost:9000");
         let bucket_name = String::from("demp5");
-        let region_name = "us-east-1".to_string();
         // let _ = create_bucket(bucket_name, end_point, access_key, sercet_key).await;
-        let resp = S3Bucket::new(bucket_name, access_key, sercet_key, end_point);    
+        let _ = S3Bucket::new(bucket_name, access_key, sercet_key, end_point);    
     }
 
     #[tokio::test]

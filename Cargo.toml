@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 tokio = {version = "1.27.0", features = ["full"]}
-axum = {version = "0.6.16"}
+axum = {version = "0.6.17"}
 diesel = {version = "2.0.4", features = ["postgres", "r2d2"]}
 dotenvy ={ version = "0.15.7"}
 log = { version = "0.4.17"}
@@ -16,3 +16,4 @@ rust-s3 = {version = "0.33"}
 aws-region = "0.25.3"
 aws-creds = "0.35.0"
 futures = "0.3.17"
+tracing-subscriber = "0.3.17"
