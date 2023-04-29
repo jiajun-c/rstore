@@ -1,0 +1,5 @@
+[server]
+port = "3000"
+
+[db]
+url = "postgres://rstore:rstore@localhost:5432/rstore"

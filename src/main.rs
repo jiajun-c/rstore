@@ -1,17 +1,21 @@
-use std::sync::Arc;
+use std::{sync::Arc, path::Path};
 
-use axum::{Router, Extension, http::Request};
 use api::maven::*;
 use axum::{
+    Router,
+    Extension,
     routing::*,
     extract::DefaultBodyLimit,
-    extract::{Path, State}
 };
+
+use config::{Config, File};
 use crud::pool::DbPool;
 use log::info;
+
+use crate::rconfig::setting::Settings;
 pub mod models;
 pub mod crud;
-pub mod config;
+pub mod rconfig;
 pub mod api;
 pub mod schema;
 pub mod storage;
@@ -22,7 +26,9 @@ async fn main() {
     log4rs::init_file("/home/bot/workspace/rstore/log4rs.yaml", Default::default()).unwrap();
     info!("rstore started");
     let pool = DbPool::new("postgres://rstore:rstore@localhost:5432/rstore");
-
+    let setting = Settings::new("/home/bot/workspace/rstore/rstore.toml".to_string()).unwrap();
+    info!("Listen on the port: {}", setting.server.port);
+    info!("database url: {}", setting.db.url);
     let pool = Arc::new(pool);
 
     let maven_router = Router::new()
@@ -31,7 +37,7 @@ async fn main() {
             .delete(delete_maven)
             .put(put_maven))
             .layer(DefaultBodyLimit::disable());
-
+    // Print out our settings (as a HashMap)
     // build our application with a single route
     let app = Router::new().nest("/packages/maven/", maven_router)
         .layer(Extension(pool));

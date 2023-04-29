@@ -18,3 +18,9 @@ aws-creds = "0.35.0"
 futures = "0.3.17"
 tracing-subscriber = "0.3.17"
 tower-http = "0.4.0"
+config = "0.13.3"
+serde = { version = "1.0.160", optional = true, features = ["derive"] }
+
+[features]
+default = ["std"]
+std = [ "serde" ]

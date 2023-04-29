@@ -7,6 +7,8 @@ A Rust-based artifact repository
 |http frame|axum|
 |orm|disel|
 |s3|aws-sdk-s3|
+|log|log4rs|
+|config|config-rs|
 
 ## Target
 
@@ -14,4 +16,4 @@ Provide support for java(maven), golang(goproxy), nodejs(npm)
 
 ## config 
 
-Config the dsn in the `.env`, expected to migrate it into the `config.toml`
+The config file is in the `rstore.toml`, it should be able to be specified.
