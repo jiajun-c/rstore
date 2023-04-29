@@ -19,3 +19,6 @@
 2023-04-29T14:47:36.124810697+08:00 - rstore started
 2023-04-29T14:47:36.176787586+08:00 - Listen on the port: 3000
 2023-04-29T14:47:36.176855809+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T02:07:03.777169323+08:00 - rstore started
+2023-04-30T02:07:03.850043259+08:00 - Listen on the port: 3000
+2023-04-30T02:07:03.850102438+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore

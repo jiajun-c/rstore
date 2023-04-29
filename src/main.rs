@@ -37,10 +37,9 @@ async fn main() {
 
     let maven_router = Router::new()
         .route("/:packageId/:groupId/:artifactId/:version/:filename", 
-        get(get_maven)
-            .delete(delete_maven)
-            .put(put_maven)
-            .get(get_maven))
+            delete(web_delete_maven)
+            .put(web_put_maven)
+            .get(web_get_maven))
             .layer(DefaultBodyLimit::disable());
     // Print out our settings (as a HashMap)
     // build our application with a single route
