@@ -8,7 +8,6 @@ use axum::{
     extract::DefaultBodyLimit,
 };
 
-use config::{Config, File};
 use crud::pool::DbPool;
 use log::info;
 
@@ -23,9 +22,14 @@ pub mod storage;
 
 #[tokio::main]
 async fn main() {
+    // Init the log
     log4rs::init_file("/home/bot/workspace/rstore/log4rs.yaml", Default::default()).unwrap();
     info!("rstore started");
+
+    // Init the database
     let pool = DbPool::new("postgres://rstore:rstore@localhost:5432/rstore");
+
+    // Init the config settings
     let setting = Settings::new("/home/bot/workspace/rstore/rstore.toml".to_string()).unwrap();
     info!("Listen on the port: {}", setting.server.port);
     info!("database url: {}", setting.db.url);
@@ -35,7 +39,8 @@ async fn main() {
         .route("/:packageId/:groupId/:artifactId/:version/:filename", 
         get(get_maven)
             .delete(delete_maven)
-            .put(put_maven))
+            .put(put_maven)
+            .get(get_maven))
             .layer(DefaultBodyLimit::disable());
     // Print out our settings (as a HashMap)
     // build our application with a single route

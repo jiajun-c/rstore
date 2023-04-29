@@ -3,14 +3,14 @@
 diesel::table! {
     mavens (id) {
         id -> Int4,
-        name -> Nullable<Varchar>,
-        group_id -> Nullable<Varchar>,
-        artifact_id -> Nullable<Varchar>,
-        packaging -> Nullable<Varchar>,
-        version -> Nullable<Varchar>,
-        bucket_name -> Nullable<Varchar>,
-        path -> Nullable<Varchar>,
-        cloud -> Nullable<Bool>,
+        name -> Varchar,
+        group_id -> Varchar,
+        artifact_id -> Varchar,
+        packaging -> Varchar,
+        version -> Varchar,
+        bucket_name -> Varchar,
+        path -> Varchar,
+        cloud -> Bool,
     }
 }
 

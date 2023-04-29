@@ -1,6 +1,7 @@
 use diesel::prelude::*;
 use crate::schema::mavens;
-#[derive(Queryable)]
+#[derive(Queryable, PartialEq, Debug)]
+#[diesel(table_name = mavens)]
 pub struct Maven {
     pub id: i32,
     pub name: String,
