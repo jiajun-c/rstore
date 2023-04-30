@@ -22,3 +22,58 @@
 2023-04-30T02:07:03.777169323+08:00 - rstore started
 2023-04-30T02:07:03.850043259+08:00 - Listen on the port: 3000
 2023-04-30T02:07:03.850102438+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T14:39:32.060328032+08:00 - rstore started
+2023-04-30T14:39:32.142856276+08:00 - Listen on the port: 3000
+2023-04-30T14:39:32.142914876+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T14:42:13.296070133+08:00 - rstore started
+2023-04-30T14:42:13.338245424+08:00 - Listen on the port: 3000
+2023-04-30T14:42:13.338279899+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T14:43:34.871849557+08:00 - rstore started
+2023-04-30T14:43:34.906581039+08:00 - Listen on the port: 3000
+2023-04-30T14:43:34.906618259+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T14:43:37.865481071+08:00 - The path: ~/org/example/test/1.0-SNAPSHOT/test-1.0-20230312.080759-1.jar
+2023-04-30T14:46:57.991974207+08:00 - rstore started
+2023-04-30T14:46:58.026510963+08:00 - Listen on the port: 3000
+2023-04-30T14:46:58.026543444+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T14:47:06.882627687+08:00 - The path: ~/org/example/test/1.0-SNAPSHOT/
+2023-04-30T14:48:02.059122662+08:00 - The path: ~/org/example/test/1.0-SNAPSHOT/
+2023-04-30T14:49:07.545559903+08:00 - rstore started
+2023-04-30T14:49:07.575334235+08:00 - Listen on the port: 3000
+2023-04-30T14:49:07.575417291+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T14:49:10.104070342+08:00 - The path: ~/org/example/test/1.0-SNAPSHOT/
+2023-04-30T14:50:10.855438704+08:00 - rstore started
+2023-04-30T14:50:10.889215041+08:00 - Listen on the port: 3000
+2023-04-30T14:50:10.889284271+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T14:50:14.113459395+08:00 - The path: ~/org/example/test/1.0-SNAPSHOT/
+2023-04-30T14:50:14.873049620+08:00 - The path: ~/org/example/test/1.0-SNAPSHOT/
+2023-04-30T14:53:03.906761937+08:00 - rstore started
+2023-04-30T14:53:03.942443518+08:00 - Listen on the port: 3000
+2023-04-30T14:53:03.942795931+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T14:53:07.248939839+08:00 - The path: ~/org/example/test/1.0-SNAPSHOT/
+2023-04-30T14:54:54.436085524+08:00 - rstore started
+2023-04-30T14:54:54.476173693+08:00 - Listen on the port: 3000
+2023-04-30T14:54:54.476235409+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T14:56:03.306186155+08:00 - rstore started
+2023-04-30T14:56:03.347298655+08:00 - Listen on the port: 3000
+2023-04-30T14:56:03.347341876+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T14:56:03.678833717+08:00 - The path: /home/bot/org/example/test/1.0-SNAPSHOT/
+2023-04-30T14:56:04.531186658+08:00 - The path: /home/bot/org/example/test/1.0-SNAPSHOT/
+2023-04-30T14:57:59.996160070+08:00 - rstore started
+2023-04-30T14:58:00.036877320+08:00 - Listen on the port: 3000
+2023-04-30T14:58:00.036970746+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T14:58:05.940247528+08:00 - The path: /home/bot/org/example/test/1.0-SNAPSHOT/
+2023-04-30T14:59:01.117319293+08:00 - rstore started
+2023-04-30T14:59:01.157644907+08:00 - Listen on the port: 3000
+2023-04-30T14:59:01.157830756+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T14:59:05.925262337+08:00 - The path: /home/bot/org/example/test/1.0-SNAPSHOT/
+2023-04-30T14:59:05.925397140+08:00 - The path: /home/bot/org/example/test/1.0-SNAPSHOT/test-1.0-20230312.080759-1.jar
+2023-04-30T15:00:33.193027496+08:00 - rstore started
+2023-04-30T15:00:33.237036086+08:00 - Listen on the port: 3000
+2023-04-30T15:00:33.237221776+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T15:00:34.451961271+08:00 - The path: /home/bot/org/example/test/1.0-SNAPSHOT/
+2023-04-30T15:00:34.452047564+08:00 - The path: /home/bot/org/example/test/1.0-SNAPSHOT/
+2023-04-30T15:28:53.739572623+08:00 - rstore started
+2023-04-30T15:28:53.781692902+08:00 - Listen on the port: 3000
+2023-04-30T15:28:53.781721365+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T15:28:57.628915322+08:00 - The path: /home/bot/org/example/test/1.0-SNAPSHOT/
+2023-04-30T15:28:57.628958032+08:00 - The path: /home/bot/org/example/test/1.0-SNAPSHOT/

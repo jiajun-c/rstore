@@ -1,6 +1,6 @@
 use axum::{response::IntoResponse, http::StatusCode};
 
-enum rError {
+pub enum rError {
     PackageNotFound,
 }
 
