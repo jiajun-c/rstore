@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <!-- localRepository
+     | 将默认的仓库位置改为想要设置的位置
+     |
+     | Default: ${user.home}/.m2/repository
+     -->
+
+    <!-- 插件组 -->
+    <pluginGroups/>
+
+    <!-- 代理 -->
+    <proxies/>
+
+    <!-- servers服务器(其中username和password是私服的用户名和密码) -->
+    <servers>
+        <server>
+            <id>maven-releases</id>
+            <username>admin</username>
+            <password>admin111</password>
+        </server>
+
+        <server>
+            <id>maven-snapshots</id>
+            <username>admin</username>
+            <password>admin111</password>
+        </server>
+
+        <server>
+            <id>hust</id>
+            <username>admin</username>
+            <password>admin</password>
+        </server>
+    </servers>
+
+    <!-- 镜像
+     | 这是从远程存储库下载依赖时使用的镜像列表。
+     |-->
+    <mirrors>
+        <!--<mirror>
+            <id>alimaven</id>
+            <mirrorOf>central</mirrorOf>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </mirror>-->
+<!--        <mirror>-->
+<!--            <id>ManaphyMirror</id>-->
+<!--            <mirrorOf>*</mirrorOf>-->
+<!--            <name>Manaphy Repository Mirror.</name>-->
+<!--            <url>http://192.168.2.132:8081/repository/maven-public/</url>-->
+<!--        </mirror>-->
+    </mirrors>
+
+    <!-- 服务器配置 -->
+    <profiles>
+        <!-- java编译插件,配jdk的编译版本-->
+        <profile>
+            <id>jdk-1.8</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+                <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+            </properties>
+        </profile>
+        <!-- 自定义私服的配置 -->
+        <profile>
+            <id>hust</id>
+            <repositories>
+                <repository>
+                    <id>rstore</id>
+                    <name>rstore</name>
+                    <url>http://127.0.0.1:3000/packages/maven/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                </repository>
+            </repositories>
+
+        </profile>
+    </profiles>
+
+    <!-- 激活Profiles
+     | 为所有生成激活的配置文件的列表。
+     |-->
+    <activeProfiles>
+        <activeProfile>jdk-1.8</activeProfile>
+        <activeProfile>Manaphy</activeProfile>
+    </activeProfiles>
+
+</settings>

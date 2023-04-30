@@ -77,3 +77,53 @@
 2023-04-30T15:28:53.781721365+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
 2023-04-30T15:28:57.628915322+08:00 - The path: /home/bot/org/example/test/1.0-SNAPSHOT/
 2023-04-30T15:28:57.628958032+08:00 - The path: /home/bot/org/example/test/1.0-SNAPSHOT/
+2023-04-30T16:08:04.462741758+08:00 - rstore started
+2023-04-30T16:08:04.496903371+08:00 - Listen on the port: 3000
+2023-04-30T16:08:04.496947705+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T16:29:28.206913874+08:00 - rstore started
+2023-04-30T16:29:28.243767046+08:00 - Listen on the port: 3000
+2023-04-30T16:29:28.243798936+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T16:56:55.611921907+08:00 - rstore started
+2023-04-30T16:56:55.647582647+08:00 - Listen on the port: 3000
+2023-04-30T16:56:55.647658039+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T16:58:14.555478587+08:00 - rstore started
+2023-04-30T16:58:14.611625111+08:00 - Listen on the port: 3000
+2023-04-30T16:58:14.611661229+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T16:58:16.964656275+08:00 - Get file: maven-metadata.xml
+2023-04-30T16:59:10.562663914+08:00 - Get file: maven-metadata.xml
+2023-04-30T16:59:37.802299884+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:06:27.836433071+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:07:00.061148896+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:08:05.013156321+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:20:17.674187840+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:21:17.513045257+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:23:41.321812243+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:24:31.152682926+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:29:19.748391928+08:00 - rstore started
+2023-04-30T17:29:19.791624100+08:00 - Listen on the port: 3000
+2023-04-30T17:29:19.791660007+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T17:29:36.291019848+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:32:12.610344091+08:00 - rstore started
+2023-04-30T17:32:12.655372922+08:00 - Listen on the port: 3000
+2023-04-30T17:32:12.655430129+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T17:34:01.113828909+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:34:40.243547892+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:36:02.000827932+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:36:08.269305233+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:36:49.527105913+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:37:01.251423603+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:39:17.655004954+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:39:18.546010882+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:39:19.068520249+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:39:19.572229772+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:39:19.801890313+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:39:20.181949052+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:50:00.649926342+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:51:25.613247599+08:00 - Get file: maven-metadata.xml
+2023-04-30T17:52:34.373846082+08:00 - Get file: maven-metadata.xml
+2023-04-30T21:14:39.473994781+08:00 - rstore started
+2023-04-30T21:14:39.540667302+08:00 - Listen on the port: 3000
+2023-04-30T21:14:39.540721860+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore
+2023-04-30T21:17:40.996069944+08:00 - rstore started
+2023-04-30T21:17:41.054024183+08:00 - Listen on the port: 3000
+2023-04-30T21:17:41.054055629+08:00 - database url: postgres://rstore:rstore@localhost:5432/rstore

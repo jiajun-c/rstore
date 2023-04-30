@@ -7,7 +7,6 @@ use axum::{
     routing::*,
     extract::DefaultBodyLimit,
 };
-
 use crud::pool::DbPool;
 use log::info;
 
@@ -39,11 +38,13 @@ async fn main() {
         .route("/:packageId/:groupId/:artifactId/:version/:filename", 
             delete(web_delete_maven)
             .put(web_put_maven)
-            .get(web_get_maven))
+            .get(web_get_maven)
+            .post(web_put_maven))
             .layer(DefaultBodyLimit::disable());
-    // Print out our settings (as a HashMap)
+            // Print out our settings (as a HashMap)
     // build our application with a single route
     let app = Router::new().nest("/packages/maven/", maven_router)
+        .route("/test", get(web_put_maven_tls))
         .layer(Extension(pool));
 
     // run it with hyper on localhost:3000

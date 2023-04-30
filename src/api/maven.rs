@@ -1,7 +1,8 @@
 use axum::{extract::{
     Path,
     Multipart
-}, response::IntoResponse, http::StatusCode};
+}, response::IntoResponse, http::{StatusCode, Response}};
+use axum_tungstenite::{WebSocket, WebSocketUpgrade};
 use log::info;
 use std::{fs::File, io::{Write, Read}, path::PathBuf};
 use crate::api::resp::*;
@@ -18,6 +19,7 @@ pub async fn web_get_maven(Path((package_id, group_id,artifact_id,version,filena
         &artifact_id, 
         &package_id, 
         &version);
+    info!("Get file: {}", filename);
     let mut file = match File::open(&path) {
         Ok(file) => file,
         Err(_) => {
@@ -43,7 +45,9 @@ pub async fn web_delete_maven(Path((package_id, group_id,artifact_id,version,fil
 }
 
 pub async fn web_put_maven(Path((package_id, group_id,artifact_id,version,filename)):
-    Path<(String, String, String, String, String)>,  state: Extension<Arc<DbPool>>,mut multipart: Multipart) ->String {
+    Path<(String, String, String, String, String)>,
+    state: Extension<Arc<DbPool>>,
+    mut multipart: Multipart) ->impl IntoResponse {
     // println!("delete");
     let path = format!("/home/bot/{}/{}/{}/{}/",package_id, group_id, artifact_id, version);
     info!("The path: {}", path);
@@ -57,6 +61,7 @@ pub async fn web_put_maven(Path((package_id, group_id,artifact_id,version,filena
         println!("Length of `{}` is {} bytes", name, data.len());
         file.write_all(&data).unwrap();
     }
+    
     let mut conn = state.get_one_connection();
     let _res = insert_maven(&mut conn, 
         &filename,
@@ -67,5 +72,28 @@ pub async fn web_put_maven(Path((package_id, group_id,artifact_id,version,filena
         "maven", 
         filepath.to_str().unwrap(), 
         &false);
-    path
+    (StatusCode::CREATED, "").into_response()
+}
+
+pub async fn web_put_maven_tls(ws: WebSocketUpgrade) ->impl IntoResponse {
+    ws.on_upgrade(handle_socket)
+}
+
+
+async fn handle_socket(mut socket: WebSocket) {
+    while let Some(msg) = socket.recv().await {
+        let msg = if let Ok(msg) = msg {
+            info!("{}", msg);
+            msg
+        } else {
+            // client disconnected
+            info!("{}", msg.unwrap());
+            return;
+        };
+
+        if socket.send(msg).await.is_err() {
+            // client disconnected
+            return;
+        }
+    }
 }

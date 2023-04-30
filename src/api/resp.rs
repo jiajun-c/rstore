@@ -9,6 +9,6 @@ impl IntoResponse for rError {
         let body = match self {
             rError::PackageNotFound => "The package not found"
         };
-        (StatusCode::INTERNAL_SERVER_ERROR, body).into_response()
+        (StatusCode::NOT_FOUND, body).into_response()
     }
 }
