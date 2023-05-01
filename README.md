@@ -9,6 +9,7 @@ A Rust-based artifact repository (still in development)
 |s3|aws-sdk-s3|
 |log|log4rs|
 |config|config-rs|
+|http client|reqwest|
 
 ## Target
 

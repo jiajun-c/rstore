@@ -1,6 +1,20 @@
 // @generated automatically by Diesel CLI.
 
 diesel::table! {
+    goinfos (id) {
+        id -> Int4,
+        package -> Varchar,
+        owner -> Varchar,
+        version -> Varchar,
+        time -> Varchar,
+        domain -> Varchar,
+        bucket_name -> Varchar,
+        path -> Varchar,
+        cloud -> Bool,
+    }
+}
+
+diesel::table! {
     mavens (id) {
         id -> Int4,
         name -> Varchar,
@@ -23,6 +37,7 @@ diesel::table! {
 }
 
 diesel::allow_tables_to_appear_in_same_query!(
+    goinfos,
     mavens,
     s3storage,
 );
