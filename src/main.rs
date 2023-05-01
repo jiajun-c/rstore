@@ -35,13 +35,13 @@ async fn main() {
     let pool = Arc::new(pool);
 
     let maven_router = Router::new()
-        .route("/:packageId/:groupId/:artifactId/:version/:filename", 
+        .route("/:packageId/:groupId/:artifactId/*filename", 
             delete(web_delete_maven)
             .put(web_put_maven)
             .get(web_get_maven)
             .post(web_put_maven))
             .layer(DefaultBodyLimit::disable());
-            // Print out our settings (as a HashMap)
+
     // build our application with a single route
     let app = Router::new().nest("/packages/maven/", maven_router)
         .route("/test", get(web_put_maven_tls))

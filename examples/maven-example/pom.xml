@@ -17,8 +17,12 @@
         <repository>
             <id>hust</id>
             <name>hust</name>
-            <url>http://211.67.25.90:8082/repository/maven-snapshots/</url>
-<!--            <url>http://127.0.0.1:3000/packages/maven/</url>-->
+<!--            <url>http://211.67.25.90:8082/repository/maven-snapshots/</url>-->
+            <url>http://127.0.0.1:3000/packages/maven/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
         </repository>
     </distributionManagement>
 </project>
