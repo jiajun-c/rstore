@@ -3,9 +3,9 @@
 diesel::table! {
     goinfo (id) {
         id -> Int4,
-        version -> Nullable<Varchar>,
-        time -> Nullable<Varchar>,
-        path -> Nullable<Varchar>,
+        version -> Varchar,
+        time -> Varchar,
+        path -> Varchar,
     }
 }
 
@@ -20,10 +20,10 @@ diesel::table! {
 diesel::table! {
     govesioninfo (mid) {
         mid -> Int4,
-        vsc -> Nullable<Varchar>,
-        url -> Nullable<Varchar>,
-        go_ref -> Nullable<Varchar>,
-        go_path -> Nullable<Varchar>,
+        vsc -> Varchar,
+        url -> Varchar,
+        go_ref -> Varchar,
+        go_path -> Varchar,
     }
 }
 
