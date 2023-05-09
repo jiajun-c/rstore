@@ -23,7 +23,7 @@ diesel::table! {
         vsc -> Varchar,
         url -> Varchar,
         go_ref -> Varchar,
-        go_path -> Varchar,
+        go_hash -> Varchar,
     }
 }
 

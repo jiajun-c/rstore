@@ -4,5 +4,5 @@ CREATE TABLE GoVesionInfo (
     vsc VARCHAR NOT NULL,
     url VARCHAR NOT NULL, 
     go_ref VARCHAR NOT NULL,
-    go_path VARCHAR NOT NULL
+    go_hash VARCHAR NOT NULL
 );

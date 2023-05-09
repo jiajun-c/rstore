@@ -12,8 +12,8 @@ pub async fn web_get_maven(Path((package_id, group_id,artifact_id,filename)):
     Path<(String, String, String, String)>, state: Extension<Arc<DbPool>>
     ) ->impl IntoResponse {
     let fileinfo = filename.split("/").collect::<Vec<_>>();
-    let mut filename: String = String::from("");
-    let mut version = String::from("");
+    let filename: String;
+    let version:String;
     if fileinfo.len() == 1 {
         filename = fileinfo[0].to_string();
         version = String::from("metadata");
@@ -32,7 +32,7 @@ pub async fn web_get_maven(Path((package_id, group_id,artifact_id,filename)):
     let mut file = match File::open(&path) {
         Ok(file) => file,
         Err(_) => {
-            return rError::PackageNotFound.into_response();
+            return RError::PackageNotFound.into_response();
         },
     };
     let mut contents = Vec::new();
@@ -57,8 +57,8 @@ pub async fn web_put_maven(Path((package_id, group_id,artifact_id,filename)):
     body: Bytes) ->impl IntoResponse {
     let mut path = format!("/home/bot/{}/{}/{}/",package_id, group_id, artifact_id);
     let fileinfo = filename.split("/").collect::<Vec<_>>();
-    let mut filename = String::from("");
-    let mut version = String::from("");
+    let filename: String;
+    let version:String;
     if fileinfo.len() == 1 {
         filename = fileinfo[0].to_string();
         version = String::from("metadata");
