@@ -1,16 +1,29 @@
 // @generated automatically by Diesel CLI.
 
 diesel::table! {
-    goinfos (id) {
+    goinfo (id) {
         id -> Int4,
-        package -> Varchar,
-        owner -> Varchar,
-        version -> Varchar,
-        time -> Varchar,
-        domain -> Varchar,
-        bucket_name -> Varchar,
-        path -> Varchar,
-        cloud -> Bool,
+        version -> Nullable<Varchar>,
+        time -> Nullable<Varchar>,
+        path -> Nullable<Varchar>,
+    }
+}
+
+diesel::table! {
+    gomodule (id) {
+        id -> Int4,
+        base -> Varchar,
+        module -> Varchar,
+    }
+}
+
+diesel::table! {
+    govesioninfo (mid) {
+        mid -> Int4,
+        vsc -> Nullable<Varchar>,
+        url -> Nullable<Varchar>,
+        go_ref -> Nullable<Varchar>,
+        go_path -> Nullable<Varchar>,
     }
 }
 
@@ -37,7 +50,9 @@ diesel::table! {
 }
 
 diesel::allow_tables_to_appear_in_same_query!(
-    goinfos,
+    goinfo,
+    gomodule,
+    govesioninfo,
     mavens,
     s3storage,
 );

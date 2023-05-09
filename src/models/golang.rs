@@ -1,14 +1,23 @@
 use diesel::prelude::*;
 
-pub struct Goinfo {
+pub struct GoModule {
     pub id: i32,
-    pub package: String,
-    pub owner: String,
-    pub version: String,
+    pub base: String,
+    pub module: String
+}
+
+pub struct GoInfo {
+    pub mid: i32, // The golang module id
+    pub version: i32,
     pub time: String,
-    pub domain: String,
-    pub bucket_name: String,
     pub path: String,
-    pub cloud: bool
+}
+
+pub struct GoVersionInfo {
+    pub mid: i32, // The golang module id
+    pub vsc: String,
+    pub url: String,
+    pub go_ref: String,
+    pub go_hash: String,
 }
 

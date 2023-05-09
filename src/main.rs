@@ -1,4 +1,4 @@
-use std::{sync::Arc, path::Path};
+use std::{sync::Arc};
 
 use api::maven::*;
 use axum::{
@@ -44,7 +44,6 @@ async fn main() {
 
     // build our application with a single route
     let app = Router::new().nest("/packages/maven/", maven_router)
-        .route("/test", get(web_put_maven_tls))
         .layer(Extension(pool));
 
     // run it with hyper on localhost:3000
